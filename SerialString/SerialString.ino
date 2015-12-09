@@ -41,58 +41,58 @@ void loop() {
     Serial.print(" - ");
     Serial.println(cmd);
     
-    if(dev == "L1") 
+    if(dev == "l1") 
     {
       if(cmd == "on")
         digitalWrite(L1, HIGH);
-      else
+      if(cmd == "off")
         digitalWrite(L1, LOW);
     }//end of L1
     
-    if(dev == "L2") 
+    if(dev == "l2") 
     {
       if(cmd == "on")
         digitalWrite(L2, HIGH);
-      else
+      if(cmd == "off")
         digitalWrite(L2, LOW);
     }//end of L2
-    if(dev == "L3") 
+    if(dev == "l3") 
     {
       if(cmd == "on")
         digitalWrite(L3, HIGH);
-      else
+      if(cmd == "off")
         digitalWrite(L3, LOW);
     }//end of L3
     
     
-    if(dev == "F1") 
+    if(dev == "f1") 
     {
       if(cmd == "on")
         digitalWrite(F1, HIGH);
-      else
+      if(cmd == "off")
         digitalWrite(F1, LOW);
     }//end of F1
-    if(dev == "F2") 
+    if(dev == "f2") 
     {
       if(cmd == "on")
         digitalWrite(F2, HIGH);
-      else
+      if(cmd == "off")
         digitalWrite(F2, LOW);
     }//end of F1
     
     
-    if(dev == "WS1") 
+    if(dev == "ws1") 
     {
       if(cmd == "on")
         digitalWrite(WS1, HIGH);
-      else
+      if(cmd == "off")
         digitalWrite(WS1, LOW);
     }//end of WS1
-    if(dev == "WS2") 
+    if(dev == "ws2") 
     {
       if(cmd == "on")
         digitalWrite(WS2, HIGH);
-      else
+      if(cmd == "off")
         digitalWrite(WS2, LOW);
     }//end of WS2
     

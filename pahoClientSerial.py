@@ -5,17 +5,15 @@ import serial
 def on_connect(client, userdata,rc):
     print("Connected to broker with rc " +str(rc))
     #now subscribe to topic
-    client.subscribe("/com/jmahendr/h1/r1/#")
+    client.subscribe("/com/jmahendr/h1/ff/#")
 
 #define callback method when a publish message is received
 def on_message(client, userdata, msg):
-    print(msg.topic + " "  + str(msg.payload))
-    #if (str(msg.payload) == 'on') :
-    #    ser.write('on')
-    #if(str(msg.payload) == 'off'):
-    #    ser.write('off')
-    ser.write(str(msg.payload))
-    print(str(msg.payload))
+    #print(msg.topic + " "  + str(msg.payload))
+    topic = str(msg.topic)
+	serialData = topic[topic.rindex('/')+1:] + "|" + str(msg.payload)
+    print(serialData)
+    ser.write(serialData)
 
 
 ser = serial.Serial('/dev/ttyACM0', 9600)
