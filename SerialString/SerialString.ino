@@ -43,56 +43,56 @@ void loop() {
     
     if(dev == "l1") 
     {
-      if(cmd == "on")
+      if(cmd == "ON")
         digitalWrite(L1, HIGH);
-      if(cmd == "off")
+      if(cmd == "OFF")
         digitalWrite(L1, LOW);
     }//end of L1
     
     if(dev == "l2") 
     {
-      if(cmd == "on")
+      if(cmd == "ON")
         digitalWrite(L2, HIGH);
-      if(cmd == "off")
+      if(cmd == "OFF")
         digitalWrite(L2, LOW);
     }//end of L2
     if(dev == "l3") 
     {
-      if(cmd == "on")
+      if(cmd == "ON")
         digitalWrite(L3, HIGH);
-      if(cmd == "off")
+      if(cmd == "OFF")
         digitalWrite(L3, LOW);
     }//end of L3
     
     
     if(dev == "f1") 
     {
-      if(cmd == "on")
+      if(cmd == "ON")
         digitalWrite(F1, HIGH);
-      if(cmd == "off")
+      if(cmd == "OFF")
         digitalWrite(F1, LOW);
     }//end of F1
     if(dev == "f2") 
     {
-      if(cmd == "on")
+      if(cmd == "ON")
         digitalWrite(F2, HIGH);
-      if(cmd == "off")
+      if(cmd == "OFF")
         digitalWrite(F2, LOW);
     }//end of F1
     
     
     if(dev == "ws1") 
     {
-      if(cmd == "on")
+      if(cmd == "ON")
         digitalWrite(WS1, HIGH);
-      if(cmd == "off")
+      if(cmd == "OFF")
         digitalWrite(WS1, LOW);
     }//end of WS1
     if(dev == "ws2") 
     {
-      if(cmd == "on")
+      if(cmd == "ON")
         digitalWrite(WS2, HIGH);
-      if(cmd == "off")
+      if(cmd == "OFF")
         digitalWrite(WS2, LOW);
     }//end of WS2
     

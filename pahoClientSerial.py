@@ -1,3 +1,10 @@
+#
+#  python client for mosquitto
+#  connects to broker and subscribes to topic
+#  communicates to arduino with serial py 
+#  arduino command is constructed with topic & payload of message from broker
+
+
 import paho.mqtt.client as mqtt
 import serial
 
