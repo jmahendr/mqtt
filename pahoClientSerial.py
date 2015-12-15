@@ -1,8 +1,11 @@
 #
 #  python client for mosquitto
-#  connects to broker and subscribes to topic
-#  communicates to arduino with serial py 
-#  arduino command is constructed with topic & payload of message from broker
+#  Connects to broker and subscribes to topic
+#  Communicates to arduino with pyserial 
+#  Arduino command is constructed with topic & payload of message from broker
+#  Arduino typically connects as /dev/ttyACM0
+#    may need exploration on how to identify arduino device dynamically.
+#
 
 
 import paho.mqtt.client as mqtt
@@ -21,16 +24,16 @@ def on_message(client, userdata, msg):
     logging.info('msg recvd: ' + msg.topic + " "  + str(msg.payload))
     topic = str(msg.topic)
     serialData = topic[topic.rindex('/')+1:] + "|" + str(msg.payload)
-    logging.debug(serialData)
+    logging.debug('serial cmd: ' + serialData)
     ser.write(serialData)
 
 
 logging.basicConfig(filename='/home/pi/projects/mqtt/log/ffWallClient.log', filemode='w', level=logging.DEBUG, 
 format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
 
-logging.info('Attempting to open serial port with arduino')
+logging.debug('Attempting to open serial port with arduino')
 ser = serial.Serial('/dev/ttyACM0', 9600)
-logging.info('Serial port opeing status ' + str(ser.isOpen()))
+logging.info('Serial port Open? ' + str(ser.isOpen()))
 
 
 client = mqtt.Client()
